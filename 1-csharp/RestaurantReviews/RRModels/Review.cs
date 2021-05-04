@@ -11,7 +11,7 @@ namespace RRModels
         /// Verbose description of the dining experience
         /// </summary>
         /// <value></value>
-        public int Desctiption { get; set; }
+        public string Description { get; set; }
         public override string ToString()
         {
             return $"\t Rating: {Rating} \n\t Description: {Description}";
