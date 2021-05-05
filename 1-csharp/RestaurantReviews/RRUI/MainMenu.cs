@@ -1,22 +1,26 @@
 using System;
 using RRModels;
 using System.Collections.Generic;
+using RRDL;
+using RRBL;
 namespace RRUI
 {
     public class MainMenu : IMenu
     {
+        private IMenu submenu;
         public void Start(){
             bool repeat = true;
             do{
                 Console.WriteLine("Welcome to my Restaurant Review App!");
                 Console.WriteLine("What would you like to do?");
-                Console.WriteLine("[0] View a restaurant");
+                Console.WriteLine("[0] CRUD Restaurant");
                 Console.WriteLine("[1] Exit");
                 string input = Console.ReadLine();
                 switch(input){
                     case "0":
                         //view a restaurant
-                        ViewRestaurant();
+                        submenu = new RestaurantMenu(new RestaurantBL(new RepoSC()));
+                        submenu.Start();
                         break;
                     case "1":
                         //exit
