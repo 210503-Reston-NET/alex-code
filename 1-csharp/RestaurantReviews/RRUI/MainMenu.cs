@@ -19,7 +19,7 @@ namespace RRUI
                 switch(input){
                     case "0":
                         //view a restaurant
-                        submenu = new RestaurantMenu(new RestaurantBL(new RepoSC()), new ValidationService());
+                        submenu = new RestaurantMenu(new RestaurantBL(new RepoFile()), new ValidationService());
                         submenu.Start();
                         break;
                     case "1":

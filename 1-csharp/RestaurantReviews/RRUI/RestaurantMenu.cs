@@ -47,10 +47,15 @@ namespace RRUI
     private void ViewRestaurant(){
            
             List<Restaurant> restaurants = _restaurantBL.GetAllRestaurants();
-            foreach(Restaurant r in restaurants){
+            //TODO look at marielle code
+            if (restaurants.Count == 0) Console.WriteLine("No restaurants! Please add some!");
+            else{
+                foreach(Restaurant r in restaurants){
                 
-                Console.WriteLine(r.ToString());
+                    Console.WriteLine(r.ToString());
+                }
             }
+
         }
     private void AddARestaurant()
     {
