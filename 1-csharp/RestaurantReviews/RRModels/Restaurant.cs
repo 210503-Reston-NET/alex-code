@@ -44,5 +44,9 @@ namespace RRModels
         {
             return $"Name: {Name} \n Location: {City}, {State}";
         }
+        public bool Equals(Restaurant restaurant)
+        {
+            return this.Name.Equals(restaurant.Name) && this.City.Equals(restaurant.City) && this.State.Equals(restaurant.State);
+        }
     }
 }

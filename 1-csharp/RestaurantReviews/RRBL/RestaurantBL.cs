@@ -23,5 +23,11 @@ namespace RRBL
             //Note this method isn't really dependent on any parameters, just directly call DL method in charge
             //of getting the restaurants
         }
+        public Restaurant AddRestaurant(Restaurant restaurant){
+            if(_repo.GetRestaurant(restaurant) != null){
+                throw new System.Exception("Restaurant already exists.");
+            }
+            return _repo.AddRestaurant(restaurant);
+        }
     }
 }
