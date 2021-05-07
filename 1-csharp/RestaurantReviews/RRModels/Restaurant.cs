@@ -1,4 +1,6 @@
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using System;
 /// <summary>
 /// Namespace for models/custom data structures involved in Restaurant Reviews
 /// </summary>
@@ -21,6 +23,7 @@ namespace RRModels
             this.City = city;
             this.State = state;
         }
+        private string _city;
         /// <summary>
         /// This describes the name of your restaurant
         /// </summary>
@@ -31,7 +34,12 @@ namespace RRModels
         /// This describes the location
         /// </summary>
         /// <value></value>
-        public string City { get; set;}
+        public string City { 
+            get {return _city; } 
+            set{
+                if(Regex.IsMatch(value, @"^[A-Za-z .]+$"))_city = value;
+                else throw new Exception("City can't have numbers");
+            }}
 
         public string State { get; set;}
         /// <summary>
