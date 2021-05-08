@@ -1,5 +1,6 @@
 using Xunit;
 using RRModels;
+using System;
 namespace RRTests
 {
     public class RestaurantTest
@@ -16,13 +17,15 @@ namespace RRTests
             //assert
             Assert.Equal(city, test.City);
         }
+        /*[Theory]
+        [InlineData("2345678i")]
+        [InlineData("gsdfgdsfgmdfogm")]*/
         [Theory]
         [InlineData("2345678i")]
-        [InlineData(null)]
-
+        [InlineData("beufkjsdhfkjs1")]
         public void CityShouldNotSetInvalidData(string input){
             //Arrange
-            RestaurantTest test = new RestaurantTest();
+            Restaurant test = new Restaurant();
 
             //Act and Assert
             Assert.Throws<Exception>(() => test.City = input);

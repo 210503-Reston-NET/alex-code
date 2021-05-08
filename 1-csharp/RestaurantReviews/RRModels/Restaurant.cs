@@ -23,6 +23,7 @@ namespace RRModels
             this.City = city;
             this.State = state;
         }
+        public Restaurant(){}
         private string _city;
         /// <summary>
         /// This describes the name of your restaurant
