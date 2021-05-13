@@ -20,6 +20,7 @@ namespace RRUI
                 Console.WriteLine("What would you like to do?");
                 Console.WriteLine("[0] View Restaurant");
                 Console.WriteLine("[1] Add Restaurant");
+                Console.WriteLine("[2] Search restaurant");
                 Console.WriteLine("[2] Exit");
                 string input = Console.ReadLine();
                 
@@ -33,6 +34,9 @@ namespace RRUI
                         AddARestaurant();
                         break;
                     case "2":
+                        SearchForRestaurant();
+                        break;
+                    case "3":
                         //exit
                         Console.WriteLine("bye, bye");
                         repeat = false;
@@ -44,7 +48,10 @@ namespace RRUI
                 }
             }while(repeat);
     }
-    private void ViewRestaurant(){
+
+        
+
+        private void ViewRestaurant(){
            
             List<Restaurant> restaurants = _restaurantBL.GetAllRestaurants();
             //TODO look at marielle code

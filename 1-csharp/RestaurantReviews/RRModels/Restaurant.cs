@@ -22,6 +22,11 @@ namespace RRModels
             this.Name = name;
             this.City = city;
             this.State = state;
+            
+        }
+        public Restaurant(string name, string city, string state, int id = 0) : this(name,city,state)
+        {
+            Id = id;
         }
         public Restaurant(){}
         private string _city;
@@ -48,6 +53,7 @@ namespace RRModels
         /// </summary>
         /// <value></value>
         public List<Review> Reviews { get; set; }
+        public int Id{ get; set;}
 
         public override string ToString()
         {

@@ -29,5 +29,10 @@ namespace RRBL
             }
             return _repo.AddRestaurant(restaurant);
         }
+
+        public Restaurant GetRestaurant(Restaurant r)
+        {
+            return _repo.GetRestaurant(r);
+        }
     }
 }
