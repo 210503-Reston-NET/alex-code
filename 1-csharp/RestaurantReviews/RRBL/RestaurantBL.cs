@@ -34,5 +34,15 @@ namespace RRBL
         {
             return _repo.GetRestaurant(r);
         }
+
+        public Restaurant DeleteRestaurant(Restaurant r)
+        {
+            Restaurant toBeDeleted = _repo.GetRestaurant(r);
+            if (toBeDeleted != null) return _repo.DeleteRestaurant(toBeDeleted);
+            else 
+            {
+                throw new System.Exception("Restaurant does not exist. Must've already been deleted hmmmm....");
+                }
+        }
     }
 }

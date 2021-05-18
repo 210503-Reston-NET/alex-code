@@ -9,5 +9,7 @@ namespace RRDL
         Restaurant GetRestaurant(Restaurant r);
         Review AddReview(Restaurant restaurant, Review review);
         List<Review> GetReviews(Restaurant restaurant);
+
+        Restaurant DeleteRestaurant(Restaurant restaurant);
     }
 }

@@ -7,5 +7,6 @@ namespace RRBL
         List<Restaurant> GetAllRestaurants();
         Restaurant AddRestaurant(Restaurant r);
         Restaurant GetRestaurant(Restaurant r);
+        Restaurant DeleteRestaurant(Restaurant r);
     }
 }

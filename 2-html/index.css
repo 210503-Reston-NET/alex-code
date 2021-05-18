@@ -1,0 +1,10 @@
+div {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+#id{
+    color: #d4c;
+}
+.pseudo:hover{
+    font-family:wingdings;
+    background-color: aquamarine;
+}

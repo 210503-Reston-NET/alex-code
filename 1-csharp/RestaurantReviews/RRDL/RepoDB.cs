@@ -43,6 +43,11 @@ namespace RRDL
             
         }
 
+        public Restaurant DeleteRestaurant(Restaurant restaurant)
+        {
+            return _context.Restuarants.Where(resto => resto.Id == restaurant.Id).Remove(restaurant.Id);
+        }
+
         public List<Model.Restaurant> GetAllRestaurants()
         {
             return _context.Restaurants.Select<Model.Restaurant>(restaurant => (

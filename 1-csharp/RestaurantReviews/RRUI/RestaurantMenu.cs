@@ -34,9 +34,12 @@ namespace RRUI
                         AddARestaurant();
                         break;
                     case "2":
-                        SearchForRestaurant();
+                        //SearchForRestaurant();
                         break;
                     case "3":
+                        DeleteARestaurant();
+                        break();
+                    case "4":
                         //exit
                         Console.WriteLine("bye, bye");
                         repeat = false;
@@ -49,7 +52,23 @@ namespace RRUI
             }while(repeat);
     }
 
-        
+        private void DeleteARestaurant()
+        {
+            Console.WriteLine("Enter the restaurant details of restaurant you want to delete");
+            string name = _validate.ValidateString("Enter the restaurant name");
+            string city = _validate.ValidateString("Enter the restaurant's city");
+            string state = _validate.ValidateString("Enter the state of the restaurant");
+
+            try{
+                Restaurant newRestaurant = new Restaurant(name, city, state);
+                Restaurant createdRestaurant = _restaurantBL.AddRestaurant(newRestaurant);
+                Console.WriteLine("New Restaurant Created: ");
+                Console.WriteLine(createdRestaurant.ToString());
+            }
+            catch(Exception ex){
+                Console.WriteLine(ex.Message);
+            }
+        }
 
         private void ViewRestaurant(){
            
